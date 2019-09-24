@@ -1,20 +1,44 @@
 {
   "name": "gatsby-image-background-slider-example",
-  "homepage": "https://GabeEddyT.github.io/gatsby-image-background-slider",
-  "version": "0.0.0",
-  "license": "MIT",
   "private": true,
+  "description": "A nice, simple, background slideshow",
+  "homepage": "https://GabeEddyT.github.io/gatsby-image-background-slider",
+  "author": "Gabe Troyan",
+  "version": "0.0.0",
   "dependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "^1.1.4",
-    "gatsby-image-background-slider": "file:.."
+    "gatsby": "^2.15.21",
+    "gatsby-image": "^2.2.20",
+    "gatsby-plugin-manifest": "^2.2.18",
+    "gatsby-plugin-offline": "^3.0.8",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-sharp": "^2.2.25",
+    "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-sharp": "^2.2.16",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1"
   },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
