@@ -26,22 +26,22 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <div
+        <header
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",          
+        }}>
+          <h1 style={{fontSize:"45pt"}}>Gatsby Image Background Slider</h1>
+        </header>
         <main>{children}</main>
-        <footer>
+        <footer style={{position:"absolute", bottom: "80px", left: "20px", margin: 0}}>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <p>Screenshots from (what was) The Secret World</p>
         </footer>
-      </div>      
+      
     </>
   )
 }

@@ -15,8 +15,8 @@
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-sharp": "^2.2.16",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "file:../node_modules/react",
+    "react-dom": "file:../node_modules/react-dom",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
@@ -30,6 +30,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "prepare": "npm link gatsby-image-background-slider",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""

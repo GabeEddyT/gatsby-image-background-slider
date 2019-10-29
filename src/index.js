@@ -31,16 +31,7 @@ const BackgroundSlider = ({images, duration, transition, initDelay, query, child
 	}
 	
 	const imgs = nodes.map(
-		(data, index)=>{
-			const backgroundWrapperStyle = {
-				position:"absolute", 
-				width:"100%", 
-				height: "100%", 
-				margin:0, 
-				padding:"none", 
-				left:0, top:0, 
-			}
-			
+		(data, index)=>{			
 			const backgroundStyle = {
 				position:"absolute", 
 				zIndex: -10,
@@ -57,12 +48,7 @@ const BackgroundSlider = ({images, duration, transition, initDelay, query, child
 			const subStyle = {
 				opacity: index ? 0 : 1, 
 				transition: `opacity ${transition}s`, 
-				pointerEvents: index ? "none" : "auto",
-				zIndex: index ? 0 : 1,
-				position: "absolute",
-				top: 0, left: 0,
-				width: "100%", height: "100%",
-				margin: 0, padding: "none"
+				pointerEvents: index ? "none" : "auto"
 			}
 
 			subRefs[index] = React.createRef();
@@ -70,7 +56,7 @@ const BackgroundSlider = ({images, duration, transition, initDelay, query, child
 
 			return (
 				<React.Fragment key={index}>
-					<div ref={bgRefs[index]} style={backgroundWrapperStyle}><Img fluid={data.childImageSharp.fluid} style={{...backgroundStyle, ...style}} {...imageProps}/></div>
+					<div ref={bgRefs[index]}><Img fluid={data.childImageSharp.fluid} style={{...backgroundStyle, ...style}} {...imageProps}/></div>
 					<div ref={subRefs[index]} style={subStyle}>{React.Children.toArray(children)[index]}</div>
 				</React.Fragment>
 			);
@@ -94,10 +80,9 @@ const BackgroundSlider = ({images, duration, transition, initDelay, query, child
 
 			subWrappers[index].style.opacity = 0;
 			subWrappers[index].style.pointerEvents = "none";
-			subWrappers[index].style.zIndex = 0;
+			
 			subWrappers[(index + 1) % length].style.opacity = 1;
-			subWrappers[(index + 1) % length].style.pointerEvents = "auto";		
-			subWrappers[(index + 1) % length].style.zIndex = 1;
+			subWrappers[(index + 1) % length].style.pointerEvents = "auto";					
 			
 			setTimeout(callback, duration * 1000, (index + 1) % length);
 		}

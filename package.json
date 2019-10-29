@@ -1,6 +1,6 @@
 {
   "name": "gatsby-image-background-slider",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Lazy-loaded background images, with a simple fade transition between them, using &#x60;gatsby-image&#x60;. Inspired by &#x60;react-background-slider&#x60;, except for—well—the obvious.",
   "author": "GabeEddyT",
   "license": "MIT",

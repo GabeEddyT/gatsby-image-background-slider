@@ -3,19 +3,35 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import BackgroundSlider from "gatsby-image-background-slider"
 import Layout from "../components/layout"
 import Image from "../components/image"
-import SEO from "../components/seo"
+
+const Dim = () => (
+  <div
+    style={{
+      background:'linear-gradient(rgba(31, 31, 31, .35), rgba(31, 31, 31, .35))', 
+      width: "100%", height: "100%", 
+      backgroundSize: "cover", 
+      position: "absolute", top: 0, zIndex: -2,
+    }}
+  ></div>
+)
 
 const IndexPage = () => (
-  <Layout>
-    {/* <SEO title="Home" /> */}
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <BackgroundSlider
+  <Layout>  
+    <div style={{
+      position: "absolute",
+      left: 0, right: 0,
+      width: "50%",
+      margin: "0 auto",
+      textAlign: "center",
+      paddingTop: "200px",
+    }}>
+      <h2 style={{fontSize: "40pt"}}>
+        Default Settings
+      </h2>
+      <br/>
+      <div><Link to="/page-2/">Customized slider</Link></div>
+    </div>  
+    <BackgroundSlider    
     query={useStaticQuery(graphql`
         query {
             backgrounds: allFile (filter: {sourceInstanceName: {eq: "backgrounds"}}){      
@@ -29,8 +45,9 @@ const IndexPage = () => (
                 }      
             }
         }
-    `)}
-    />
+    `)}    
+    /> 
+    <Dim/>     
   </Layout>
 )
 
