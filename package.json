@@ -1,8 +1,20 @@
 {
   "name": "gatsby-image-background-slider",
-  "version": "0.0.0",
-  "description": "Lazy-loaded background images, with a simple fade transition between them, using &#x60;gatsby-image&#x60;. Inspired by &#x60;react-background-slider&#x60;, except for—well—the obvious.",
-  "author": "GabeEddyT",
+  "version": "0.0.1",
+  "description": "Lazy-loaded background images, with a simple fade transition between them, using gatsby-image. Inspired by react-background-slider, except for—well—the obvious.",
+  "keywords": [
+    "gatsby",
+    "gatsby-image",
+    "background",
+    "slider",
+    "slideshow",
+    "gatsby-component"
+  ],
+  "author": {
+    "name": "Gabe Troyan",
+    "email": "Gabe@JusticePorkGames.com",
+    "url": "https://gabe.ws"
+  },
   "license": "MIT",
   "repository": "GabeEddyT/gatsby-image-background-slider",
   "main": "dist/index.js",
