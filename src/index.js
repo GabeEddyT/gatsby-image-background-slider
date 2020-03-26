@@ -184,7 +184,7 @@ export const Pagination = ({callbacks}) => {
 	},[]);
 
 	return(
-		<>
+		<React.Fragment>
 			{Array.from(Array(callbacks.getCount()).keys()).map ((index) =>
 				<span role='button' ref={buttonRefs[index] = React.createRef()} 
 				key={index}
@@ -198,6 +198,6 @@ export const Pagination = ({callbacks}) => {
 				}} 
 				onClick={() => callbacks.atIndex(index)}>&middot;</span>
 			)}
-		</>
+		</React.Fragment>
 	)
 }
