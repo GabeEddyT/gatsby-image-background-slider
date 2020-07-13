@@ -88,6 +88,11 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 	
 	if (callbacks) callbacks.getCount = () => imgs.length;
 
+  const clearAndSetTimeoutHandle = (newTimeoutHandle) => {
+    clearTimeout(timeoutHandleRef.current);
+    setTimeoutHandle(newTimeoutHandle);
+  }
+
 	const initEffect = () => {
 		bgRefs.forEach((bgRef) => {
 			bgWrappers.push(bgRef.current.firstElementChild);			
@@ -115,10 +120,10 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 				callbacks.onChange(index, (index + 1) % length);
 			}
             setIndex(prevIndex => (prevIndex + 1) % length);
-            setTimeoutHandle(setTimeout(callback, duration * 1000));
+            clearAndSetTimeoutHandle(setTimeout(callback, duration * 1000));
 		}
 
-        setTimeoutHandle(setTimeout(callback, initDelay * 1000));
+        clearAndSetTimeoutHandle(setTimeout(callback, initDelay * 1000));
  
         if (callbacks){     
             callbacks.atIndex = function (newIndex) {
@@ -140,7 +145,7 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 					callbacks.onChange(index, newIndex % length);
 				}
                 setIndex((newIndex) % length);
-                setTimeoutHandle(setTimeout(callback, duration * 1000));        
+                clearAndSetTimeoutHandle(setTimeout(callback, duration * 1000));        
             }
 
             callbacks.next = () => callbacks.atIndex((indexRef.current + 1) % length);
