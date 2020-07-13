@@ -78,20 +78,20 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 			);
 		} 
 	);
-    
-    const [timeoutHandle, setTimeoutHandle] = useState(0);
-    const timeoutHandleRef = useRef(timeoutHandle);
-    timeoutHandleRef.current = timeoutHandle;
-    const [index, setIndex] = useState(0);
-    const indexRef = useRef(index);
+		
+		const [timeoutHandle, setTimeoutHandle] = useState(0);
+		const timeoutHandleRef = useRef(timeoutHandle);
+		timeoutHandleRef.current = timeoutHandle;
+		const [index, setIndex] = useState(0);
+		const indexRef = useRef(index);
 	indexRef.current = index;
 	
 	if (callbacks) callbacks.getCount = () => imgs.length;
 
-  const clearAndSetTimeoutHandle = (newTimeoutHandle) => {
-    clearTimeout(timeoutHandleRef.current);
-    setTimeoutHandle(newTimeoutHandle);
-  }
+	const clearAndSetTimeoutHandle = (newTimeoutHandle) => {
+		clearTimeout(timeoutHandleRef.current);
+		setTimeoutHandle(newTimeoutHandle);
+	}
 
 	const initEffect = () => {
 		bgRefs.forEach((bgRef) => {
@@ -102,9 +102,9 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 			subWrappers.push(subRef.current);
 		})
 		
-        const length = bgWrappers.length;
+				const length = bgWrappers.length;
 		const callback = function(){     
-            const index = indexRef.current;
+						const index = indexRef.current;
 			
 			bgWrappers[index].style.opacity = 0;
 			bgWrappers[(index + 1) % length].style.opacity = 1;
@@ -119,42 +119,42 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 			{
 				callbacks.onChange(index, (index + 1) % length);
 			}
-            setIndex(prevIndex => (prevIndex + 1) % length);
-            clearAndSetTimeoutHandle(setTimeout(callback, duration * 1000));
+						setIndex(prevIndex => (prevIndex + 1) % length);
+						clearAndSetTimeoutHandle(setTimeout(callback, duration * 1000));
 		}
 
-        clearAndSetTimeoutHandle(setTimeout(callback, initDelay * 1000));
+				clearAndSetTimeoutHandle(setTimeout(callback, initDelay * 1000));
  
-        if (callbacks){     
-            callbacks.atIndex = function (newIndex) {
-                const index = indexRef.current;
-                clearTimeout(timeoutHandleRef.current);
-                    
-                bgWrappers[index].style.opacity = 0;
-                bgWrappers[(newIndex) % length].style.opacity = 1;
-        
-                subWrappers[index].style.opacity = 0;
-                subWrappers[index].style.pointerEvents = "none";
-                
-                subWrappers[(newIndex) % length].style.opacity = 1;
-                subWrappers[(newIndex) % length].style.pointerEvents = "auto";					
+				if (callbacks){     
+						callbacks.atIndex = function (newIndex) {
+								const index = indexRef.current;
+								clearTimeout(timeoutHandleRef.current);
+										
+								bgWrappers[index].style.opacity = 0;
+								bgWrappers[(newIndex) % length].style.opacity = 1;
+				
+								subWrappers[index].style.opacity = 0;
+								subWrappers[index].style.pointerEvents = "none";
+								
+								subWrappers[(newIndex) % length].style.opacity = 1;
+								subWrappers[(newIndex) % length].style.pointerEvents = "auto";					
 				
 				
 				if(callbacks.onChange) 
 				{
 					callbacks.onChange(index, newIndex % length);
 				}
-                setIndex((newIndex) % length);
-                clearAndSetTimeoutHandle(setTimeout(callback, duration * 1000));        
-            }
+								setIndex((newIndex) % length);
+								clearAndSetTimeoutHandle(setTimeout(callback, duration * 1000));        
+						}
 
-            callbacks.next = () => callbacks.atIndex((indexRef.current + 1) % length);
+						callbacks.next = () => callbacks.atIndex((indexRef.current + 1) % length);
 			callbacks.prev = () => callbacks.atIndex((indexRef.current + length - 1) % length);
-        }
-    
-    return () => {
-      clearTimeout(timeoutHandleRef.current);
-    }
+				}
+		
+		return () => {
+			clearTimeout(timeoutHandleRef.current);
+		}
 	}
 	 
 	// Runs once after DOM is loaded; effectively `componentDidMount`	
