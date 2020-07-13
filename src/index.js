@@ -151,6 +151,10 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
             callbacks.next = () => callbacks.atIndex((indexRef.current + 1) % length);
 			callbacks.prev = () => callbacks.atIndex((indexRef.current + length - 1) % length);
         }
+    
+    return () => {
+      clearTimeout(timeoutHandleRef.current);
+    }
 	}
 	 
 	// Runs once after DOM is loaded; effectively `componentDidMount`	
