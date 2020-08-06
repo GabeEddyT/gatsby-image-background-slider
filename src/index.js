@@ -117,7 +117,7 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 			subWrappers[(newIndex) % length].style.opacity = 1;
 			subWrappers[(newIndex) % length].style.pointerEvents = "auto";					
 	
-			if(callbacks.onChange){
+			if(callbacks){
 				callbacks.onChange(index, newIndex % length);
 			}
 			setIndex((newIndex) % length);
