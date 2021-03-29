@@ -33,7 +33,7 @@ const Layout = ({ children }) => (
             nodes {
               relativePath
               childImageSharp {
-                gatsbyImageData(width: 4000, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 4000, quality: 100)
               }
             }
           }
@@ -73,7 +73,7 @@ const Layout = ({ children }) => (
             nodes {
               relativePath
               childImageSharp {
-                gatsbyImageData(width: 4000, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 4000, quality: 100)
               }
             }
           }
