@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
-import Img from "gatsby-image"
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 /**
  * @param {object} props Component props
@@ -47,7 +47,7 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 	}
 	
 	const imgs = nodes.map(
-		(data, index)=>{			
+		(data, index)=>{
 			const backgroundStyle = {
 				position:"absolute", 
 				zIndex: -10,
@@ -72,7 +72,7 @@ const BackgroundSlider = ({callbacks, images, duration, transition, initDelay, q
 
 			return (
 				<React.Fragment key={index}>
-					<div ref={bgRefs[index]}><Img fluid={data.childImageSharp.fluid} style={{...backgroundStyle, ...style}} {...imageProps}/></div>
+					<div ref={bgRefs[index]}><GatsbyImage image={data.childImageSharp.gatsbyImageData} style={{...backgroundStyle, ...style}} {...imageProps}/></div>
 					<div ref={subRefs[index]} style={subStyle}>{React.Children.toArray(children)[index]}</div>
 				</React.Fragment>
 			);

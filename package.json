@@ -37,11 +37,11 @@
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "gatsby": "^2.0.0",
-    "gatsby-image": "^2.0.0",
-    "gatsby-plugin-sharp": "^2.0.0",
-    "gatsby-source-filesystem": "^2.0.0",
-    "gatsby-transformer-sharp": "^2.0.0"
+    "gatsby": "^3.0.0",
+    "gatsby-plugin-image": "^1.0.0",
+    "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-transformer-sharp": "^3.0.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
