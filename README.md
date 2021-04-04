@@ -1,6 +1,6 @@
 # gatsby-image-background-slider
 
-> Lazy-loaded background images, with a simple fade transition between them, using [`gatsby-plugin-image`](https://www.npmjs.com/package/gatsby-image). Inspired by [`react-background-slider`](https://www.npmjs.com/package/react-background-slider), except for—well—the obvious.
+> Lazy-loaded background images, with a simple fade transition between them, using [`gatsby-plugin-image`](https://www.npmjs.com/package/gatsby-plugin-image). Inspired by [`react-background-slider`](https://www.npmjs.com/package/react-background-slider), except for—well—the obvious.
 
 [![NPM](https://img.shields.io/npm/v/gatsby-image-background-slider.svg)](https://www.npmjs.com/package/gatsby-image-background-slider) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
