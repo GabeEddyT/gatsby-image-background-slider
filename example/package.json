@@ -6,7 +6,7 @@
   "author": "Gabe Troyan",
   "version": "0.0.0",
   "dependencies": {
-    "gatsby": "^2.15.21",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-manifest": "^2.2.18",
     "gatsby-plugin-offline": "^3.0.8",
